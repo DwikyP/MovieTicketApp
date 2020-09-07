@@ -1,0 +1,98 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home/tabs/movies"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{loadedMovies.title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <youtube-player
+  videoId={{loadedMovies.trailerId}}
+  suggestedQuality="highres"
+  [height]="240"
+  [width]="375"
+  >
+</youtube-player>
+<div>
+    <img class="thumbnail" [src]="loadedMovies.imageUrl">
+    <h3>{{loadedMovies.title}}</h3>
+    <br><span class="sub">Genre: </span>{{loadedMovies.genre}}
+    <br><span class="sub">Duration: </span>{{loadedMovies.duration}}
+    <br><br><br><br>
+
+    <h4>SYNOPSIS:</h4>
+    <p>{{loadedMovies.synopsis}}</p>
+
+    <h4>SHOWTIMES:</h4>
+    <ion-grid>
+      <ion-row >
+        <ion-col *ngFor="let showtime of loadedMovies.showtimes">
+          {{showtime}}
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <h4>BOOKING:</h4>
+    <ion-item>
+      <ion-label>DATE</ion-label>
+      <ion-datetime displayFormat="DDDD MMM D, YYYY" min="{{myDate}}" max="2020" value="{{myDate}}" [(ngModel)]="showdate"></ion-datetime>
+    </ion-item>
+    
+    <ion-list>
+      <ion-item>
+        <ion-label>SHOWTIME</ion-label>
+        <ion-select okText="Okay" cancelText="Dismiss" [(ngModel)]="showtime" >
+          <ion-select-option *ngFor="let showtime of loadedMovies.showtimes" value="{{showtime}}">{{showtime}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+    <ion-list>
+      <ion-item>
+        <ion-label>CINEMA</ion-label>
+        <ion-select value="CGV Living Plaza" okText="Okay" cancelText="Dismiss" [(ngModel)]="cinema_name">
+          <ion-select-option value="CGV Living Plaza">CGV Living Plaza</ion-select-option>
+          <ion-select-option value="Chadston XXI">Chadston XXI</ion-select-option>
+          <ion-select-option value="Cinepolis Distrik 1 Meikarta">Cinepolis Distrik 1 Meikarta</ion-select-option>
+          <ion-select-option value="Cinepolis Mall Lippo Cikarang">Cinepolis Mall Lippo Cikarang</ion-select-option>
+          <ion-select-option value="Cinepolis Maxxbox Orange County">Cinepolis Maxxbox Orange County</ion-select-option>
+          <ion-select-option value="Sentra Grosir Cikarang XXI">Sentra Grosir Cikarang XXI</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+    <ion-list>
+      <ion-item>
+        <ion-label>SEAT</ion-label>
+        <ion-select value="A1" okText="Okay" cancelText="Dismiss" [(ngModel)]="seat">
+          <ion-select-option value="A1">A1</ion-select-option>
+          <ion-select-option value="A2">A2</ion-select-option>
+          <ion-select-option value="A3">A3</ion-select-option>
+          <ion-select-option value="A4">A4</ion-select-option>
+          <ion-select-option value="B1">B1</ion-select-option>
+          <ion-select-option value="B2">B2</ion-select-option>
+          <ion-select-option value="B3">B3</ion-select-option>
+          <ion-select-option value="B4">B4</ion-select-option>
+          <ion-select-option value="C1">C1</ion-select-option>
+          <ion-select-option value="C2">C2</ion-select-option>
+          <ion-select-option value="C3">C3</ion-select-option>
+          <ion-select-option value="C4">C4</ion-select-option>
+          <ion-select-option value="D1">D1</ion-select-option>
+          <ion-select-option value="D2">D2</ion-select-option>
+          <ion-select-option value="D3">D3</ion-select-option>
+          <ion-select-option value="D4">D4</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+    <div class="buttons">
+      <ion-button class="book" (click)="bookTicket()">Book Ticket</ion-button>
+      <ion-button (click)="addWatchlist()">
+        <ion-icon name="heart-circle-outline" ></ion-icon>
+      </ion-button>
+     
+    </div>
+</div>
+</ion-content>

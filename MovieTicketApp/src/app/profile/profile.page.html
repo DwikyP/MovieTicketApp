@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home/tabs/movies"></ion-back-button>
+    </ion-buttons>
+    <ion-title>My Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content  slot="fixed" >
+  <div class="card">
+    <div class="header">
+      <div class="avatar">
+        <img src="../../assets/profile.jpg" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="user-meta ion-text-center">
+      <h3 class="name">{{username}}</h3>
+      <h5 class="edit" ><ion-button fill="clear" (click)="editProfile(user_id,username,phone,email)">Edit Profile</ion-button></h5>
+    </div>
+    <ion-button expand="full" color="primary" disabled="true">{{phone}}</ion-button>
+    <ion-button expand="full" color="secondary" disabled="true">{{email}}</ion-button>
+  </div>
+</ion-content>

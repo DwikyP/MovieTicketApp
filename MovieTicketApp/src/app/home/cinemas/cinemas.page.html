@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>      
+    <ion-title>Cinemas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list >
+    <ion-item *ngFor="let cinema of loadedCinemas" [routerLink]="['/', 'home', 'tabs', 'cinemas', cinema.id]"
+    detail >
+      <ion-thumbnail slot="start">
+        <ion-img [src]="cinema.imageUrl" ></ion-img>
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{cinema.cinemaName}}</h2>
+        <h3>{{cinema.type}}</h3>
+        <p>
+          <ion-icon name="location-sharp"></ion-icon>
+          {{cinema.adress}}
+        </p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

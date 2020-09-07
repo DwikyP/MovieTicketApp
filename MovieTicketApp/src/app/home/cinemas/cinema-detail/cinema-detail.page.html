@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home/tabs/cinemas"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{loadedCinema.cinemaName}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div>
+    <img src={{loadedCinema.imageUrl}}>
+    <p>
+      <ion-icon name="location-sharp"></ion-icon>
+      {{loadedCinema.adress}}
+    </p>
+    <h3>Now Showing:</h3>
+    <div class="thumnails">
+      <div class="list-thumbnail">
+        <div class="img-thumb" *ngFor="let x of loadedMovies">
+          <img class="thumb" [src]="x.imageUrl">
+          <br>{{x.title}}
+        </div>
+      </div>
+    </div>
+
+  </div>
+</ion-content>

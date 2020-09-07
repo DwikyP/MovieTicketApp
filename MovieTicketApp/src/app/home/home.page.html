@@ -1,0 +1,59 @@
+  <ion-menu side="start" menuId="first" contentId="main">
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-title>My Account</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle>
+          <ion-item routerLink="/profile" lines="none">
+            <ion-icon name="person-circle-outline"></ion-icon>{{username}}
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item>
+            <ion-icon name="call-outline"></ion-icon>{{phone}}
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item >
+            <ion-icon name="at-circle-outline"></ion-icon>{{email}}
+          </ion-item>
+       </ion-menu-toggle>
+      <ion-menu-toggle>
+        <ion-item routerLink="/watchlist">
+          <ion-icon name="heart-circle-outline"></ion-icon>Watch List
+        </ion-item>
+      </ion-menu-toggle>
+        
+      </ion-list>
+    </ion-content>
+    <ion-footer>
+      <ion-toolbar>
+        <ion-button slot="end" (click)="processLogOut()">Logout<ion-icon name="log-out-outline"></ion-icon></ion-button>
+      </ion-toolbar>
+    </ion-footer>
+  </ion-menu>
+  
+<ion-router-outlet id="main"></ion-router-outlet>
+
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="movies">
+      <ion-icon name="film-outline"></ion-icon>
+      <ion-label>Movies</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="cinemas">
+      <ion-icon name="business-outline"></ion-icon>
+      <ion-label>Cinemas</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="tickets">
+      <ion-icon name="card-outline"></ion-icon>
+      <ion-label>Tickets</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
+

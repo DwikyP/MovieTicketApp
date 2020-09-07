@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>My Tickets</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list >
+    <ion-item *ngFor="let ticket of tickets" >
+      <ion-thumbnail slot="start">
+        <img src="assets/bookedticket.png" >
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ticket.movie_name}}</h2>
+        <h3>{{ticket.cinema_name}}</h3>
+        <p>
+          Showtime:
+          {{ticket.showtime}}
+        </p>
+        <p>
+          Date:
+          {{ticket.showdate}}
+        </p>
+        <p>
+          Seat:
+          {{ticket.seat}}
+        </p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

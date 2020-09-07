@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Register Form</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <img src="assets/ticket.png">
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">Username</ion-label>
+      <ion-input type="text" [(ngModel)]="username" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="email" [(ngModel)]="email" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Phone</ion-label>
+      <ion-input type="text" [(ngModel)]="phone" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Password</ion-label>
+      <ion-input type="password" [(ngModel)]="password" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Confirm Password</ion-label>
+      <ion-input type="password" [(ngModel)]="cpassword" required></ion-input>
+    </ion-item>
+  </ion-list>
+  <div>
+    <ion-button expand="full" padding color="primary" (click)="processRegister()">Register</ion-button>
+    <ion-text></ion-text>
+    <ion-button expand="full" padding fill="clear" color="medium" (click)="processLogin()">Already Have an Account?</ion-button>
+  </div>
+ 
+</ion-content>

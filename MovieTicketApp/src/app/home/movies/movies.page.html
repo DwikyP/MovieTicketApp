@@ -1,0 +1,112 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>    
+    <ion-title>Movies</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-text>
+    <h2>Now Showing: </h2>
+  </ion-text>
+  <ion-grid>
+    <ion-row>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-subtitle>Theater 1</ion-card-subtitle>
+          <ion-card-title>{{loadedMovies[0].title}}</ion-card-title>
+        </ion-card-header>
+        <img [src]="loadedMovies[0].imageUrl">
+        <p>Synopsis:</p>
+        <ion-card-content>
+          <p>{{ loadedMovies[0].synopsis |slice:0:100 }}...</p>
+        </ion-card-content>
+        <div>
+          <p > Showtimes: {{loadedMovies[0].showtimes}}</p>
+        </div>
+        <div>
+          <ion-button expand="full" [routerLink]="['/','home','tabs','movies',loadedMovies[0].id]">Detail</ion-button>
+        </div>
+      </ion-card>
+    </ion-row>
+    <ion-row>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-subtitle>Theater 2</ion-card-subtitle>
+          <ion-card-title>{{loadedMovies[1].title}}</ion-card-title>
+        </ion-card-header>
+        <img [src]="loadedMovies[1].imageUrl">
+        <p>Synopsis:</p>
+        <ion-card-content>
+          <p>{{ loadedMovies[1].synopsis |slice:0:100 }}...</p>
+        </ion-card-content>
+        <div>
+          <p > Showtimes: {{loadedMovies[1].showtimes}}</p>
+        </div>
+        <div>
+          <ion-button expand="full" [routerLink]="['/','home','tabs','movies',loadedMovies[1].id]">Detail</ion-button>
+        </div>
+      </ion-card>
+    </ion-row>
+    <ion-row>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-subtitle>Theater 3</ion-card-subtitle>
+          <ion-card-title>{{loadedMovies[2].title}}</ion-card-title>
+        </ion-card-header>
+        <img [src]="loadedMovies[2].imageUrl">
+        <p>Synopsis:</p>
+        <ion-card-content>
+          <p>{{ loadedMovies[2].synopsis |slice:0:100 }}...</p>
+        </ion-card-content>
+        <div>
+          <p > Showtimes: {{loadedMovies[2].showtimes}}</p>
+        </div>
+        <div>
+          <ion-button expand="full" [routerLink]="['/','home','tabs','movies',loadedMovies[2].id]">Detail</ion-button>
+        </div>
+      </ion-card>
+    </ion-row>
+    <ion-row>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-subtitle>Theater 4</ion-card-subtitle>
+          <ion-card-title>{{loadedMovies[3].title}}</ion-card-title>
+        </ion-card-header>
+        <img [src]="loadedMovies[3].imageUrl">
+        <p>Synopsis:</p>
+        <ion-card-content>
+          <p>{{ loadedMovies[3].synopsis |slice:0:100 }}...</p>
+        </ion-card-content>
+        <div>
+          <p > Showtimes: {{loadedMovies[3].showtimes}}</p>
+        </div>
+        <div>
+          <ion-button expand="full" [routerLink]="['/','home','tabs','movies',loadedMovies[3].id]">Detail</ion-button>
+        </div>
+      </ion-card>
+    </ion-row>
+    <ion-row>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-subtitle>Theater 5</ion-card-subtitle>
+          <ion-card-title>{{loadedMovies[4].title}}</ion-card-title>
+        </ion-card-header>
+        <img [src]="loadedMovies[4].imageUrl">
+        <p>Synopsis:</p>
+        <ion-card-content>
+          <p>{{ loadedMovies[4].synopsis |slice:0:100 }}...</p>
+        </ion-card-content>
+        <div>
+          <p > Showtimes: {{loadedMovies[4].showtimes}}</p>
+        </div>
+        <div>
+          <ion-button expand="full" [routerLink]="['/','home','tabs','movies',loadedMovies[4].id]">Detail</ion-button>
+        </div>
+      </ion-card>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
